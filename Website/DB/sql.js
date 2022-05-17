@@ -18,8 +18,6 @@ require('dotenv').config({path:path.join(__dirname,"../.env")});
     
     const fs = require("fs");
 
-    const createTableSql = require("./tables.json");
-
     client.connect();
 
     const get_table_query = `
