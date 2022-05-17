@@ -11,11 +11,11 @@ Integer= (min, max) =>{
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 // DD.MM.YYYY
-Timestamp = (date) =>{
-    if (date == null){
-        max = Date.now()
-    } else{ date = date.split(".");
-    let newDate = new Date( date[2], date[1] - 1, date[0]);
+Timestamp = (Maxdate) =>{
+    if (Maxdate == null){
+        max = 9007199254748991
+    } else{ Maxdate = Maxdate.split(".");
+    let newDate = new Date( Maxdate[2], Maxdate[1] - 1, Maxdate[0]);
     max = newDate.getTime();
     }
     return(Integer(0,max))
@@ -30,7 +30,7 @@ Name = (type, NameGender) =>{
         do{
             start -= 1;
         } while (names[start]!=' ');
-        end = start+2;
+        end = start+1;
         do{
             end += 1;
         } while (names[end]!=' ')
@@ -39,15 +39,15 @@ Name = (type, NameGender) =>{
 
     foreName = (NameGender) =>{
         if (NameGender=='m'){
-            let max = 23206
-            let names = fs.readFileSync(path.join(__dirname,'maleNames.txt'),'utf8')            
+            let max = 20267
+            let names = fs.readFileSync(path.join(__dirname,'maleNames.txt'),'utf8')   
             return (getName(names,max));
         } else if ( NameGender=='f'){
             let max = 35539
-            let names = fs.readFileSync(path.join(__dirname,'femaleNames.txt'),'utf8')            
+            let names = fs.readFileSync(path.join(__dirname,'femaleNames.txt'),'utf8')   
             return (getName(names,max));
         } else{
-            let max = 35539+23206
+            let max = 55823
             let names = fs.readFileSync(path.join(__dirname,'femaleNames.txt'),'utf8') + fs.readFileSync(path.join(__dirname,'maleNames.txt'),'utf8')  
             return (getName(names,max));
         }
@@ -74,10 +74,10 @@ Text = (length) =>{
 }
 
 Dates = (minYear, maxYear) =>{
-    if (maxYear==null){
+    if (maxYear==NaN){
         max=9007199254748991
     }
-    if (minYear==null){
+    if (minYear==NaN){
         min= -9007199254748991;
     }
 
@@ -109,5 +109,3 @@ Gender = () =>{
         return('d')
     }
 }
-
-
