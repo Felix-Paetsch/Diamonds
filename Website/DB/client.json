@@ -1,7 +1,7 @@
 {
     "user": "postgres",
     "host": "localhost",
-    "database": "sql_demo",
-    "password": "seseffom",
+    "database": "Diamonds",
+    "password": "1234",
     "port": 5432
   }
