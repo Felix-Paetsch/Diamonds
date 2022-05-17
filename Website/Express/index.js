@@ -1,6 +1,8 @@
 const express = require("express")
 const path = require("path")
 app = express();
+require('./api.js')(app)
+
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
