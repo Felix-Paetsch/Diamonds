@@ -9,13 +9,17 @@
 
     client.connect();
 
-    FillTables = async() => {
+    const get_table_query = `
+        SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_CATALOG='Diamonds';
+    `;
 
-    }
-
-    for (let x in jsonFile) {
-        let res = await client.query(`DROP TABLE IF NOT EXISTS ${x}`);
-    }
+    await (await client.query(get_table_query)).rows.map(x => x.table_name).filter(x => {
+        return !(x.startsWith("pg_") || x.startsWith("sql_"))
+    }).forEach(async (x) => {
+        console.log(x);
+        await client.query(`DROP TABLE IF EXISTS ${x};`)
+    })
+    
 
     for (let x in jsonFile) {
         let res = await client.query(jsonFile[x]);
