@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronjaa</title>
+    <link rel="stylesheet" href="public/start.css">
+</head>
+<body>
+    <header id="top_header">
+        <div>
+            <div class="icon"></div>
+            <span class="name">Alt gå til helvete</span>
+        </div>
+    </header>
+    <section id="top_screen">
+        <div>
+            <q><%= quote %></q>
+        </div>
+    </section>
+    <section id="own_sign">
+        <div>'t Spijt me, lieve</div>
+        <div>schat, dit is een </div>
+        <div>one night stand</div>
+        <div>Ook jij wilt iemand </div>
+        <div>anders als je weet </div>
+        <div>https://www.youtube.com/watch?v=gt28ZAGiNIo</div>
+        <div>(Wähle dein Sternzeichen / aktuelles Sternzeichen)</div>
+    </section>
+    <section id="stars">
+        <h3>Fireflies</h3>
+        <p>
+            You would not believe your eyes<br>
+            If ten million fireflies<br>
+            Lit up the world as I fell asleep
+        </p>
+        <a href="View">View</a>
+    </section>
+    <section id="horoscopes">
+        <h2>Regn fra blå himmel</h2>
+        <div id="horoscopes-wrapper">
+            <% horoscopes.forEach( h => { %>
+                <div class="horoscope-card">
+                    <h3><%= h.type %></h3>
+                    <p><%= h.description %></p>
+                    <a href="<%- h.href %>">View</a>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+    <div class="hr"></div>
+    <section id="articles">
+        <h2>Wahrheidt</h2>
+        <div id="article_wrapper">
+            <% articles.forEach( a => { %>
+                <a href="<%- a.href %>" class="article">
+                    <div class="article-image" style="background-image: url('<%= a.href %>')"></div>
+                    <div class="article-preview">
+                        <h3><%= a.title %></h3>
+                        <p><%= a.summary %></p>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </section>
+    <footer>
+        Wenn du das lesen kannst, brauchst du keine Brille.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    --theme_color: #804a00;
+    --theme_color_low_opac: #804a0099;
+    --silver: #b4b6b2;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+#top_header{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1em 5em;
+}
+
+#top_header div{
+    width: 100%;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+#top_header div .icon{
+    width:4em;
+    height:4em;
+    background: url("/public/icon.png");
+    border-radius: 2em;
+    background-size: cover;
+    border: .1em solid black;
+    box-sizing: border-box;
+}
+
+#top_header div .name{
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: calc(4em/1.5);
+    margin-left: .5em;
+    box-sizing: border-box;
+}
+
+#top_screen{
+    width: 100%;
+    padding: 2em 2em 2em 5em;
+    box-sizing: border-box;
+    background-image: url("/public/sky2.jpg");
+    background-size: cover;
+}
+
+#top_screen div{
+    width: calc(100% - 4em);
+    box-sizing: border-box;
+    background: var(--theme_color_low_opac); 
+    text-align: center;
+    white-space: break-word;
+    padding: 2em;
+    color: white;
+}
+
+#top_screen q{
+    font-size: 1.8em;
+}
+
+#own_sign{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--theme_color);
+    color: var(--silver);
+    border-top: .15em solid var(--silver);
+    border-bottom: .15em solid var(--silver);
+}
+
+#own_sign > div{
+    cursor: pointer;
+    line-height: 2em;
+    padding: 0em 1em;
+    font-size: 1em;
+    border-right: .15em solid var(--silver);
+    white-space: nowrap;
+}
+
+#own_sign > div:hover{
+    background-color: var(--silver);
+    color: var(--theme_color);
+}
+
+#stars{
+    width: 100%;
+    min-height: 10em;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixel4k.com%2Fwp-content%2Fuploads%2F2018%2F09%2Fstarry-sky-stars-black-glitter-4k_1536013841.jpg&f=1&nofb=1");
+    background-size: cover;
+    color: white;
+    padding: 2em 2em 3em 5em;
+    box-sizing: border-box;
+}
+
+#stars h3{
+    font-size: 1.8em;
+}
+
+#stars > p{
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+#stars > a{
+    border: .1em solid white;
+    border-radius: 1em;
+    color: white;
+    font-size: 1em;
+    padding: .3em 2em;
+    margin: 1em 0em;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#stars > a:hover{
+    background-color: white;
+    color: black
+}
+
+#horoscopes{
+    width: 100%;
+    min-height: 20em;
+    box-sizing: border-box;
+    padding-left: 5em;
+}
+
+#horoscopes-wrapper{
+    display: flex;
+    width: 100%;
+    min-height: 30em;
+    flex-direction: row;
+}
+
+#horoscopes-wrapper .horoscope-card{
+    background-image: url("wha.png");
+    background-size: cover;
+    margin: 1em 2.2em 2em -.2em;
+    border-radius: 2em;
+    border: .2em solid var(--silver);
+    min-width: 20em;
+    width: 30em;
+    box-sizing: border-box;
+    padding: 1em 2em;
+}
+
+#horoscopes-wrapper .horoscope-card h3{
+    color: white;
+    text-decoration: underline;
+    font-size: 1.5em;
+    white-space: wrap;
+    display: inline-block;
+    height: 3em;
+}
+
+#horoscopes-wrapper .horoscope-card p{
+    color: white;
+    font-size: 1.2em;
+    white-space: wrap;
+    height: 7em;
+}
+
+#horoscopes-wrapper .horoscope-card a{
+    border: .1em solid white;
+    border-radius: 1em;
+    color: white;
+    font-size: 1em;
+    padding: .3em 2em;
+    margin: 1em 0em;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hr{
+    width: 100%;
+    background-color: var(--theme_color);
+    height: .1em;
+}
+
+#articles{
+    margin: 1em 2em 0em 5em;
+}
+
+#articles > h2, #horoscopes > h2{
+    font-size: 1.8em;
+    margin: 1.2em 0 1em 0;
+}
+
+#articles > #article_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#articles > #article_wrapper .article{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1.5em;
+    border: .1em solid white;
+    padding: .5em .5em .5em .5em;
+    margin-left: -.5em;
+}
+
+#articles > #article_wrapper .article:hover{
+    border: .1em solid var(--theme_color_low_opac);
+}
+
+#articles > #article_wrapper .article .article-image{
+    width:5em;
+    height:5em;
+    border-radius: 2.5em;
+    background-size: cover;
+    border: .1em solid black;
+    box-sizing: border-box;
+}
+
+#articles > #article_wrapper .article .article-preview{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+    width: calc(100% - 5em)
+}
+
+#articles > #article_wrapper .article .article-preview h3{
+    margin: 0;
+}
+
+#articles > #article_wrapper .article .article-preview p{
+    margin: 1em 0 0 0;
+    white-space: wrap;
+}
+
+footer{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: var(--silver);
+    background-color: var(--theme_color);
+    line-height: 10em;
+    margin-top: 3em;
+}
