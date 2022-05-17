@@ -1,7 +1,16 @@
 const express = require("express")
 const path = require("path")
 app = express();
-require('./api.js')(app)
+app.use(express.json())
+const {Client} = require('pg')
+    const client = new Client({
+        "user": process.env.User,
+        "host": process.env.HOST,
+        "database": process.env.DATABASE,
+        "password": String(process.env.PASSWORD),
+        "port": process.env.PORT,
+      });
+require('./api.js')(app,client)
 
 
 //setting view engine to ejs
