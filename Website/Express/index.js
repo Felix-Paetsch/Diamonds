@@ -5,7 +5,7 @@ app = express();
 //setting view engine to ejs
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, './views'))
-app.use('/public', express.static('public'));
+app.use('/public', express.static(path.join(__dirname, './public')));
 
 //route for index page
 app.get("/", function (req, res) {
