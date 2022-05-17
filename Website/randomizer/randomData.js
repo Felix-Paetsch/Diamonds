@@ -1,6 +1,6 @@
 //what kind of Data do we need ?
 // text x
-// names / fr and ls
+// names / fr and ls x
 // dates x
 // gender x
 // numbers x
@@ -17,14 +17,54 @@ Integer= (min, max) =>{
     }
     return Math.floor(Math.random() * (max - min) ) + min;
   }
-/*
+
+Timestamp = (date) =>{
+    if (date == null){
+        max = Date.now()
+    } else{ date = date.split(".");
+    let newDate = new Date( date[2], date[1] - 1, date[0]);
+    max = newDate.getTime();
+    }
+    return(Integer(0,max))
+}
+
 Name = (type, NameGender) =>{
+    
+    getName = (names,max) =>{
+        
+        start = Integer(1,max)
+        do{
+            start -= 1;
+        } while (names[start]!=' ');
+        end = start+2;
+        do{
+            end += 1;
+        } while (names[end]!=' ')
+        return(names.slice(start,end).trim())
+    }
+
     foreName = (NameGender) =>{
-
-    }
+        if (NameGender=='m'){
+            let max = 23206
+            let names = fs.readFileSync(path.join(__dirname,'maleNames.txt'),'utf8')            
+            return (getName(names,max));
+        } else if ( NameGender=='f'){
+            let max = 35539
+            let names = fs.readFileSync(path.join(__dirname,'femaleNames.txt'),'utf8')            
+            return (getName(names,max));
+        } else{
+            let max = 35539+23206
+            let names = fs.readFileSync(path.join(__dirname,'femaleNames.txt'),'utf8') + fs.readFileSync(path.join(__dirname,'maleNames.txt'),'utf8')  
+            return (getName(names,max));
+        }
+        }
+    
     lastName = () =>{
-
+        let max = 695414;
+        let names = fs.readFileSync(path.join(__dirname,'lastNames.txt'),'utf8') 
+        return (getName(names,max));
     }
+
     if (type=='f'){
         return(foreName(NameGender))
     }else if (type=='l'){
@@ -32,33 +72,30 @@ Name = (type, NameGender) =>{
     }else{
         return(foreName(NameGender)+' '+ lastName())
     }
-}*/
+}
 
 Text = (length) =>{
     let start =  Integer(0,2000);
     return fs.readFileSync(path.join(__dirname,'text.txt'),'utf8').slice(start,start+length);
 }
 
-Date = (minYear, maxYear) =>{
+Dates = (minYear, maxYear) =>{
     if (maxYear==null){
         max=9007199254748991
     }
-    if (min==null){
-        min=-9007199254748991
+    if (minYear==null){
+        min= -9007199254748991;
     }
 
     const MonthsWith31Days = [1,3,5,7,8,10,12];
-    let year =  Integer(minYear, maxYear)
+    let year =  Integer(minYear, maxYear-1)
     let month =  Integer(1, 12)
 
     if (month in MonthsWith31Days) {
-        console.log(31);
          day =  Integer(1,31); 
     } else if (month != 2) {
-        console.log(30);
          day =   Integer(1,30);
     } else {
-        console.log(100)
         if (year%400==0||year%4==0 ){
              day =  Integer(1,29);
         }else{
