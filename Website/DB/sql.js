@@ -5,7 +5,7 @@ require('dotenv').config({path:path.join(__dirname,"../.env")});
 (async () => {
 
     //programm to delete, create and fill all the tables in the db
-    const clientdata = require("./client.json")
+    
     const {Client} = require('pg')
     const client = new Client({
         "user": process.env.User,
@@ -14,8 +14,11 @@ require('dotenv').config({path:path.join(__dirname,"../.env")});
         "password": String(process.env.PASSWORD),
         "port": process.env.PORT,
       });
+    
+    
+    const fs = require("fs");
 
-    const jsonFile = require("./tables.json");
+    const createTableSql = require("./tables.json");
 
     client.connect();
 
@@ -29,11 +32,10 @@ require('dotenv').config({path:path.join(__dirname,"../.env")});
         console.log(x);
         await client.query(`DROP TABLE IF EXISTS ${x};`)
     })
-
-    for (let x in jsonFile) {
-        let res = await client.query(jsonFile[x]);
-    }
-
+    
+    let sql = fs.readFileSync("C:\\git\\Diamonds\\Website\\DB\\tables.sql", "utf8");
+    await client.query(sql);
+    
     client.end();
 
 })()
