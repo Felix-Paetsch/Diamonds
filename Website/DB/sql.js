@@ -14,7 +14,7 @@
     }
 
     for (let x in jsonFile) {
-        let res = await client.query(`DROP TABLE IF NOT EXISTS ${x}`);
+        let res = await client.query(`DROP TABLE IF EXISTS ${x};`);
     }
 
     for (let x in jsonFile) {
