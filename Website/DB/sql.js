@@ -30,8 +30,9 @@ require('dotenv').config({path:path.join(__dirname,"../.env")});
         console.log(x);
         await client.query(`DROP TABLE IF EXISTS ${x};`)
     })
-    
-    let sql = fs.readFileSync("C:\\git\\Diamonds\\Website\\DB\\tables.sql", "utf8");
+    const path = require("path")
+
+    let sql = fs.readFileSync(path.join(__dirname,'tables.sql'), "utf8");
     await client.query(sql);
     
     client.end();
