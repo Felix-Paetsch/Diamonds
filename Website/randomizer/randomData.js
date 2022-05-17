@@ -1,10 +1,3 @@
-//what kind of Data do we need ?
-// text x
-// names / fr and ls x
-// dates x
-// gender x
-// numbers x
-// timestamps
 const path = require("path");
 const fs = require('fs');
 
@@ -17,7 +10,7 @@ Integer= (min, max) =>{
     }
     return Math.floor(Math.random() * (max - min) ) + min;
   }
-
+// DD.MM.YYYY
 Timestamp = (date) =>{
     if (date == null){
         max = Date.now()
@@ -27,7 +20,8 @@ Timestamp = (date) =>{
     }
     return(Integer(0,max))
 }
-
+// type ... 'f' für forename, 'l' für lastname, irgendwas sonst für beides
+// NameGender ... 'm' für männlicheNamen, 'f' für weiblicheNamen, irgendwas sonst für einen aus beiden
 Name = (type, NameGender) =>{
     
     getName = (names,max) =>{
