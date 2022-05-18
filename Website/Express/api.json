@@ -1,11 +1,13 @@
 
 [{
-  "route": "/api/add_quote",
+  "route": "/api/horoscopes",
   "method": "post",
-  "query": "INSERT INTO quotes (author, text) VALUES ($1, $2)",
+  "query": "INSERT INTO horoscopes (type, description, image_url, href) VALUES ($1, $2, $3, $4)",
   "params": [{
-    "author": "string", 
-    "content": "string"
+    "param1": "type", 
+    "param2": "description",
+    "param3": "image_url",
+    "param4": "href"
   }]
 },
 {
@@ -13,9 +15,21 @@
     "header" : "quote",
     "query" : "INSERT INTO quote (quote, author) VALUES ($1, $2)",
     "params" : [{
-    "quote" : "quote",
-    "name2" : "author"
+      "param1" : "quote",
+      "param2" : "author"
     }]
-}]
+},
+{
+  "route": "/api/article",
+  "method": "post",
+  "query": "INSERT INTO article (title, summary, image_url, href) VALUES ($1, $2, $3, $4)",
+  "params": [{
+    "param1": "title", 
+    "param2": "summary",
+    "param3": "image_url",
+    "param4": "href"
+  }]
+}
+]
     
 
