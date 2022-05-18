@@ -1,0 +1,10 @@
+{
+    "route" : "/api/quote",
+    "header" : "quote",
+    "args" : {
+        "name1" : "quote",
+        "name2" : "author"
+    }  
+}
+
+
