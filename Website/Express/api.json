@@ -1,0 +1,21 @@
+
+[{
+  "route": "/api/add_quote",
+  "method": "post",
+  "query": "INSERT INTO quotes (author, text) VALUES ($1, $2)",
+  "params": [{
+    "author": "string", 
+    "content": "string"
+  }]
+},
+{
+    "route" : "/api/quote",
+    "header" : "quote",
+    "query" : "INSERT INTO quote (quote, author) VALUES ($1, $2)",
+    "params" : [{
+    "quote" : "quote",
+    "name2" : "author"
+    }]
+}]
+    
+

@@ -12,7 +12,6 @@ module.exports = (app,db) => {
 
     app.post('/api/horoscope', function(req,res) {
         if (req.body.password == "horoscope"){
-
             db.query('insert into horoscopes (type, description, image_url, href) values ($1, $2, $3, $4)',[req.body.type, req.body.description, req.body.image_url, req.body.href])
             res.send('successfully send')
 
