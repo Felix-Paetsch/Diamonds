@@ -3,7 +3,7 @@ module.exports = (app,db) => {
         if(req.body.password == "quote"){
 
             db.query('insert into quote (quote, author) values ($1, $2)',[req.body.quote, req.body.author])
-            res.send('succsesfully send')
+            res.send('successfully send')
 
         }else{
             res.send('Api request failed')
@@ -14,7 +14,7 @@ module.exports = (app,db) => {
         if (req.body.password == "horoscope"){
 
             db.query('insert into horoscopes (type, description, image_url, href) values ($1, $2, $3, $4)',[req.body.type, req.body.description, req.body.image_url, req.body.href])
-            res.send('successesfuly send')
+            res.send('successfully send')
 
         }else{
             res.send('Api request failed')
@@ -25,7 +25,7 @@ module.exports = (app,db) => {
         if (req.body.password == "article"){
 
             db.query('insert into article (title, summary, image_url, href) values ($1, $2, $3, $4)',[req.body.title, req.body.summary, req.body.image_url, req.body.href])
-            res.send('successfuly send')
+            res.send('successfully send')
 
         }else{
             res.send('Api request failed')
