@@ -15,7 +15,6 @@ const db = require('./poolConnect.js');
     await (await db.query(get_table_query)).rows.map(x => x.table_name).filter(x => {
         return !(x.startsWith("pg_") || x.startsWith("sql_"))
     }).forEach(async (x) => {
-        console.log(x);
         await db.query(`DROP TABLE IF EXISTS ${x};`)
     })
     const path = require("path")

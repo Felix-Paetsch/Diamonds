@@ -3,7 +3,6 @@ const { Pool } = require('pg')
 const path = require('path');
 require('dotenv').config({path:path.join(__dirname,"../.env")});
 
-console.log(typeof process.env.CONNECTIONTIMEOUTMILLIS)
 
 const pool = new Pool({
     "user": process.env.USER,
@@ -18,11 +17,7 @@ const pool = new Pool({
 
 module.exports = {
     async query(text, params) {
-      const start = Date.now()
-      const res = await pool.query(text, params)
-      const duration = Date.now() - start
-      console.log('executed query', { text, duration, rows: res.rowCount })
-      return res
+        return(await pool.query(text, params))
     },
     async getClient() {
       const client = await pool.connect()
