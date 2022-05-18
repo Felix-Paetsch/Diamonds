@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS quote (
   ID int NOT NULL,
   qoute varchar(200),
+  author varchar(60),
   PRIMARY KEY(ID)
 );
 CREATE TABLE IF NOT EXISTS article (
