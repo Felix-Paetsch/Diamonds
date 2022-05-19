@@ -3,7 +3,7 @@ const config = require("./api.json")
 
 module.exports = (app,db) => {
     config.forEach(request => {
-        app["method"](request["route"], function(req,res) {
+        app[request["method"]](request["route"], function(req,res) {
             
             if(req.body.password == "password"){
                 // für jedes element im Array params eines request der json Datei
