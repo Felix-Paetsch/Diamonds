@@ -17,7 +17,11 @@ app.use('/public', express.static(path.join(__dirname, './public')));
 //route for index page
 app.get("/", function (req, res) {
     res.render("home", {
-        quote: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        quote: {
+            text: "In a world where love does not exist, in a world where you are alone and will never fiend your significant other, we are here. To help you with the hottest bullshit horoskopes can give you!",
+            author: "Ernest Hemingway"
+        },
+        date: "21. January 1793",
         horoscopes: [
             {
                 type: "How much wood would a woodchuck chuck?",

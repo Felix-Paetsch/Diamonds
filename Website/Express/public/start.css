@@ -1,196 +1,174 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
 
 body{
-    --theme_color: #804a00;
-    --theme_color_low_opac: #804a0099;
-    --silver: #b4b6b2;
-    padding: 0;
     margin: 0;
-    width: 100%;
+    padding: 0;
     overflow-x: hidden;
-    font-family: 'Raleway', sans-serif;
+
+    --bg : #fff;
+    --pastel_3: #FBE4FF;
+    --pastel_2: #5016a7;
+    --pastel_1: #FBE4FF;
+
+    background-color: var(--bg);
+    color: var(--pastel_3);
+    font-family: 'Dancing Script', cursive;
 }
 
-#top_header{
+section{
     width: 100%;
-    box-sizing: border-box;
-    margin: 1em 5em;
 }
 
-#top_header div{
-    width: 100%;
-    box-sizing: border-box;
-    
-    display: flex;
-    flex-direction: row;
-}
-
-#top_header div .icon{
-    width:4em;
-    height:4em;
-    background: url("/public/icon.png");
-    border-radius: 2em;
+#sky .sky_background{
+    height: 30em;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpluspng.com%2Fimg-png%2Fpurple-star-png-hd-galaxy-stars-wallpaper-hd-1920.png&f=1&nofb=1");
     background-size: cover;
-    border: .1em solid black;
+    color: white;
     box-sizing: border-box;
-}
-
-#top_header div .name{
-    display: inline-block;
-    font-size: 1.5em;
-    line-height: calc(4em/1.5);
-    margin-left: .5em;
-    box-sizing: border-box;
-}
-
-#top_screen{
     width: 100%;
-    padding: 2em 2em 2em 5em;
-    box-sizing: border-box;
-    background-image: url("/public/sky2.jpg");
-    background-size: cover;
 }
 
-#top_screen div{
-    width: calc(100% - 4em);
+#top_wheel{
     box-sizing: border-box;
-    background: var(--theme_color_low_opac); 
+    width: 150vw;
+    background-color: var(--bg);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    margin: -15em 0 0 -25vw;
+    padding: 0 calc(25vw + 5em);
+    border-top: .5em var(--pastel_1) solid;
+    border-left: .5em var(--pastel_1) solid;
+    border-right: .5em var(--pastel_1) solid;
+    background-color: #111;
+}
+
+#top_wheel h6{
     text-align: center;
-    white-space: break-word;
-    padding: 2em;
-    color: white;
-}
-
-#top_screen q{
-    font-size: 1.8em;
-}
-
-#own_sign{
     width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    background-color: var(--theme_color);
-    color: var(--silver);
-    border-top: .15em solid var(--silver);
-    border-bottom: .15em solid var(--silver);
+    margin: 3em 0 -1.5em 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
 }
 
-#own_sign > div{
-    cursor: pointer;
-    line-height: 2em;
-    padding: 0em 1em;
-    font-size: 1em;
-    border-right: .15em solid var(--silver);
-    white-space: nowrap;
-}
-
-#own_sign > div:hover{
-    background-color: var(--silver);
-    color: var(--theme_color);
-}
-
-#stars{
+#top_wheel #date{
+    text-align: center;
     width: 100%;
-    min-height: 10em;
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixel4k.com%2Fwp-content%2Fuploads%2F2018%2F09%2Fstarry-sky-stars-black-glitter-4k_1536013841.jpg&f=1&nofb=1");
-    background-size: cover;
-    color: white;
-    padding: 2em 2em 3em 5em;
-    box-sizing: border-box;
+    font-size: 3em;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
 }
 
-#stars h3{
-    font-size: 1.8em;
-}
-
-#stars > p{
-    font-size: 1em;
-    line-height: 1.6em;
-}
-
-#stars > a{
-    border: .1em solid white;
-    border-radius: 1em;
-    color: white;
-    font-size: 1em;
-    padding: .3em 2em;
-    margin: 1em 0em;
-    display: inline-block;
-    text-decoration: none;
-}
-
-#stars > a:hover{
-    background-color: white;
-    color: black
-}
-
-#horoscopes{
-    width: 100%;
-    min-height: 20em;
-    box-sizing: border-box;
-    padding-left: 5em;
-}
-
-#horoscopes-wrapper{
-    display: flex;
-    width: 100%;
-    min-height: 30em;
-    flex-direction: row;
-}
-
-#horoscopes-wrapper .horoscope-card{
-    background-image: url("wha.png");
-    background-size: cover;
-    margin: 1em 2.2em 2em -.2em;
-    border-radius: 2em;
-    border: .2em solid var(--silver);
-    min-width: 20em;
-    width: 30em;
-    box-sizing: border-box;
-    padding: 1em 2em;
-}
-
-#horoscopes-wrapper .horoscope-card h3{
-    color: white;
-    text-decoration: underline;
-    font-size: 1.5em;
-    white-space: wrap;
-    display: inline-block;
-    height: 3em;
-}
-
-#horoscopes-wrapper .horoscope-card p{
-    color: white;
-    font-size: 1.2em;
-    white-space: wrap;
-    height: 7em;
-}
-
-#horoscopes-wrapper .horoscope-card a{
-    border: .1em solid white;
-    border-radius: 1em;
-    color: white;
-    font-size: 1em;
-    padding: .3em 2em;
-    margin: 1em 0em;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.hr{
-    width: 100%;
-    background-color: var(--theme_color);
+#top_wheel .underline{
+    width: 5em;
     height: .1em;
+    background-color: var(--pastel_3);
+    margin-left: calc(50% - 2.5em);
+}
+
+#top_wheel .quote_wrapper{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+#top_wheel .quote{
+    padding-top: 2em;
+    max-width: 40em;
+    font-size: 1.6em;
+}
+
+#top_wheel .quote q{
+    padding: 0;
+}
+
+#top_wheel .quote p{
+    text-align: right;
+    padding: 0;
+}
+
+#yourSign {
+    width: 100%;
+    padding: 0em 0em;
+    box-sizing: border-box;
+}
+
+#yourSign h4 {
+    font-size: 2em;
+    padding: .3em 0 .3em 2.5em;
+    background-color: #111;
+}
+
+#yourSign .sign_list{
+    display: flex;
+    color: var(--pastel_2);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2.5em;
+}
+
+#yourSign .sign_list > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em 1em;
+    border: .1em solid var(--bg);
+    box-sizing: border-box;
+    padding: .3em
+}
+
+#yourSign .sign_list > div:nth-child(5){
+    border: .1em solid var(--pastel_2);
+}
+
+#yourSign .sign_list .sign{
+    font-size: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+#yourSignDetailed{
+    padding: 2em 0em
+}
+
+#yourSignDetailed h4{
+    font-size: 2em;
+    padding: .3em 0 .3em 2.5em;
+    background-color: #111;
+}
+
+#yourSignDetailed p{
+    font-size: 1.5em;
+    margin: 0 calc(5em/1.5);
+    color: #111;
+}
+
+#yourSignDetailed a{
+    font-size: 1.4em;
+    color: var(--pastel_2);
+    text-decoration: none;
+    display: block;
+    margin: 1em calc(5em/1.4)
+}
+
+#yourSignDetailed div.underline{
+    width: 5em;
+    height: .1em;
+    background-color: var(--pastel_3);
+    margin-left: calc(50% - 2.5em);
+    margin-top: 4em;
 }
 
 #articles{
-    margin: 1em 2em 0em 5em;
-}
-
-#articles > h2, #horoscopes > h2{
-    font-size: 1.8em;
-    margin: 1.2em 0 1em 0;
+    padding: 1em 5em;
 }
 
 #articles > #article_wrapper{
@@ -202,15 +180,15 @@ body{
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    color: black;
     margin-bottom: 1.5em;
-    border: .1em solid white;
     padding: .5em .5em .5em .5em;
     margin-left: -.5em;
+    border: .1em solid var(--bg);
+    color: var(--pastel_2);
 }
 
 #articles > #article_wrapper .article:hover{
-    border: .1em solid var(--theme_color_low_opac);
+    border: .1em solid var(--pastel_3);
 }
 
 #articles > #article_wrapper .article .article-image{
@@ -218,7 +196,7 @@ body{
     height:5em;
     border-radius: 2.5em;
     background-size: cover;
-    border: .1em solid black;
+    border: .1em solid var(--pastel_3);
     box-sizing: border-box;
 }
 
@@ -239,11 +217,13 @@ body{
 }
 
 footer{
-    width: 100%;
-    box-sizing: border-box;
     text-align: center;
-    color: var(--silver);
-    background-color: var(--theme_color);
-    line-height: 10em;
-    margin-top: 3em;
+    padding: 4em 5em;
+    width: 100%;
+    background-color: var(--pastel_1);
+    color: #111;
+}
+
+footer span{
+    font-size: 1.3em;
 }

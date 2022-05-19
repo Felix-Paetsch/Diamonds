@@ -8,50 +8,42 @@
     <link rel="stylesheet" href="public/start.css">
 </head>
 <body>
-    <header id="top_header">
-        <div>
-            <div class="icon"></div>
-            <span class="name">Alt gå til helvete</span>
-        </div>
-    </header>
-    <section id="top_screen">
-        <div>
-            <q><%= quote %></q>
-        </div>
+    <section id="sky">
+        <div class="sky_background"></div>
     </section>
-    <section id="own_sign">
-        <div>'t Spijt me, lieve</div>
-        <div>schat, dit is een </div>
-        <div>one night stand</div>
-        <div>Ook jij wilt iemand </div>
-        <div>anders als je weet </div>
-        <div>https://www.youtube.com/watch?v=gt28ZAGiNIo</div>
-        <div>(Wähle dein Sternzeichen / aktuelles Sternzeichen)</div>
+    <section id="top_wheel">
+        <h6>Horoskopes for</h6>
+        <h2 id="date">
+            <%= date %>
+        </h2>
+        <div class="underline"></div>
+        <div class="quote_wrapper">
+            <div class="quote">
+                <q>
+                    <%= quote.text %>
+                </q>
+                <p>— <%= quote.author %></p>
+            </div> 
+        </div> 
     </section>
-    <section id="stars">
-        <h3>Fireflies</h3>
-        <p>
-            You would not believe your eyes<br>
-            If ten million fireflies<br>
-            Lit up the world as I fell asleep
-        </p>
-        <a href="View">View</a>
-    </section>
-    <section id="horoscopes">
-        <h2>Regn fra blå himmel</h2>
-        <div id="horoscopes-wrapper">
-            <% horoscopes.forEach( h => { %>
-                <div class="horoscope-card">
-                    <h3><%= h.type %></h3>
-                    <p><%= h.description %></p>
-                    <a href="<%- h.href %>">View</a>
+    <section id="yourSign">
+        <h4>Choose your Zodic Sign</h4>
+        <div class="sign_list">
+            <% ["Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer","Cancer"].forEach(x => { %>
+                <div>
+                    <div class="sign"><%= x %></div>
+                    <div class="sign-data">25.01 - 69.420</div>
                 </div>
-            <% }); %>
+            <% }) %>
         </div>
     </section>
-    <div class="hr"></div>
+    <section id="yourSignDetailed">
+        <h4>Todays horoskope (cancer)</h4>
+        <p>A man walks into an enchanted forest and tries to cut down a talking tree. “You can’t cut me down,” the tree exclaims, “I’m a talking tree!” The man responds, “You may be a talking tree, but you will dialogue.” | It’s important to establish a good vocabulary. If I had known the difference between the words “antidote” and “anecdote,” one of my best friends would still be alive. | Today on a drive, I decided to go visit my childhood home. I asked the people living there if I could come inside because I was feeling nostalgic, but they refused and slammed the door in my face. My parents are the worst.</p>
+        <a href="/" class="teaser">Learn more about your past self and ghost and whatsoever I am going insane...</a>
+        <div class="underline"></div>
+    </section>
     <section id="articles">
-        <h2>Wahrheidt</h2>
         <div id="article_wrapper">
             <% articles.forEach( a => { %>
                 <a href="<%- a.href %>" class="article">
@@ -65,7 +57,7 @@
         </div>
     </section>
     <footer>
-        Wenn du das lesen kannst, brauchst du keine Brille.
+        <span>Kansjke jeg elsker deg, vet ikke</span>
     </footer>
 </body>
 </html>
