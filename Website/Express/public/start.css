@@ -25,7 +25,7 @@ section{
 }
 
 #sky .sky_background{
-    height: 30em;
+    height: 35em;
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpluspng.com%2Fimg-png%2Fpurple-star-png-hd-galaxy-stars-wallpaper-hd-1920.png&f=1&nofb=1");
     background-size: cover;
     color: white;
@@ -41,10 +41,11 @@ section{
     border-top-right-radius: 50%;
     margin: -15em 0 0 -25vw;
     padding: 0 calc(25vw + 5em);
-    border-top: .5em var(--pastel_1) solid;
-    border-left: .5em var(--pastel_1) solid;
-    border-right: .5em var(--pastel_1) solid;
-    background-color: #111;
+    border: .5em #111 solid;
+    border-bottom: none;
+    
+    color: #111;
+    background-color: var(--pastel_1);
 }
 
 #top_wheel h6{
@@ -81,7 +82,7 @@ section{
 #top_wheel .quote{
     padding-top: 2em;
     max-width: 40em;
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 
 #top_wheel .quote q{
@@ -102,37 +103,88 @@ section{
 #yourSign h4 {
     font-size: 2em;
     padding: .3em 0 .3em 2.5em;
-    background-color: #111;
+    color: #111;
+    background-color: var(--pastel_1);
 }
 
-#yourSign .sign_list{
+#yourSign .sign_list .slider{
     display: flex;
-    color: var(--pastel_2);
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    padding: 0 2.5em;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 0em .2em .2em 5em;
+    display: none;
 }
 
-#yourSign .sign_list > div{
+#yourSign .sign_list .slider div{
+    color: black;
+    margin-right: 2em;
+    font-size: 1.5em;
+}
+
+#yourSign .sign_list .slider div.active::after{
+    content: "";
+    width: 120%;
+    height: .1em;
+    margin-left: -10%;
+    background-color: var(--pastel_3);
+    display: block;
+}
+
+#yourSign .sign_list .nextPrev{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1em 1em;
-    border: .1em solid var(--bg);
-    box-sizing: border-box;
-    padding: .3em
+    flex-direction: row;
+    padding: 0em 5em 2em 5em;
+    justify-content: space-between;
+    border-bottom: .15em solid #111;
 }
 
-#yourSign .sign_list > div:nth-child(5){
-    border: .1em solid var(--pastel_2);
-}
-
-#yourSign .sign_list .sign{
+#yourSign .sign_list .nextPrev div{
     font-size: 2em;
-    line-height: 2em;
-    text-align: center;
+    color: #111;
+}
+
+
+#yourSign .sign_list .sign_wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 2em 5em 0em 5em;
+    margin-bottom: -1em;
+}
+
+#yourSign .sign_list .sign_wrapper .img{
+    width: 10em;
+    height: 10em;
+    min-width: 10em;
+    border: .2em solid var(--pastel_3);
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpluspng.com%2Fimg-png%2Fpurple-star-png-hd-galaxy-stars-wallpaper-hd-1920.png&f=1&nofb=1");
+    background-size: cover;
+    border-radius: 5em;
+    box-sizing: border-box;
+}
+
+#yourSign .sign_list .sign_wrapper .text{
+    padding: 0 0 0 3em;
+    word-wrap: wrap;
+    color: #111;
+}
+
+#yourSign .sign_list .sign_wrapper .name{
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+}
+
+#yourSign .sign_list .sign_wrapper .date{
+    padding: .2em 0em 0em 0em;
+    margin: 0;
+    font-size: 1em;
+}
+
+#yourSign .sign_list .sign_wrapper .descr{
+    padding: 1em 0em 0em 0em;
+    margin: 0;
+    font-size: 1.2em;
 }
 
 #yourSignDetailed{
@@ -142,7 +194,8 @@ section{
 #yourSignDetailed h4{
     font-size: 2em;
     padding: .3em 0 .3em 2.5em;
-    background-color: #111;
+    color: #111;
+    background-color: var(--pastel_1);
 }
 
 #yourSignDetailed p{
@@ -161,7 +214,7 @@ section{
 
 #yourSignDetailed div.underline{
     width: 5em;
-    height: .1em;
+    height: .15em;
     background-color: var(--pastel_3);
     margin-left: calc(50% - 2.5em);
     margin-top: 4em;
